@@ -15,6 +15,7 @@ class WP_Json {
 	function __construct() {
 
 		add_action( 'admin_menu', array( $this, 'wpj_add_menu' ) );
+		register_deactivation_hook( __FILE__, array( $this, 'wpj_uninstall' ) );
 
 	}
 
@@ -134,6 +135,19 @@ class WP_Json {
 		if ( isset ( $_POST['post_category'] ) ) {
 			$_SESSION['post_category']   = $_POST['post_category'];
 			$_SESSION['number_of_posts'] = $_POST['number_of_posts'];
+		}
+	}
+
+	/*
+	* Actions performed on de-activation of plugin
+	*/
+	function wpj_uninstall() {
+
+		// destroy the session if we are deactivating the plugin
+		if (isset($_COOKIE['PHPSESSID'])) {
+			setcookie('PHPSESSID', "", time()-3600, "/");
+			$_SESSION = array();
+			session_destroy();
 		}
 	}
 
