@@ -3,13 +3,13 @@ improved wordpress plugin for msl api
 
 a simple plugin for viewing the posts the mindshare labs api provides
 
-settings page lets you choose how many posts to view and what category of post
+wp json / settings page on dashboard lets you choose how many posts to view and what category of post
 
-display page displays the posts utilizing shortcode 'display_the_data' that uses those settings
+wp json / display page on dashboard displays the posts utilizing shortcode 'display_the_data' that uses those settings
 
-you can also add the shortcode 'display_the_data' to a page not in the admin page
+you can also add the shortcode 'display_the_data' to a page to view the posts
 
-activate the plugin
+download the zip file, go to add new in plugins and then upload, then choose the downloaded zip file and install and activate
 
-you should see WP Json under your 'settings' in your dashboard
+
 
